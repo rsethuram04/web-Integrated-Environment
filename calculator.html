@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculator</title>
+</head>
+
+<style>
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: None;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  
+  button{
+    padding:20px;
+  }
+</style>
+<body>
+     
+    
+    <!--code for navigation bar-->
+    <div >
+      <ul>
+          <li><a href="file:///C:/Users/sethu/Desktop/hacker/home.html">Home</a></li>
+          
+          
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Web Browsre</a>
+            <div class="dropdown-content">
+              <a href="https://www.google.com/">Google</a>
+              <a href="https://www.youtube.com/">You Tube</a>
+              
+            </div>
+          </li>
+          <li ><a href="file:///C:/Users/sethu/Desktop/hacker/learning.html">My Learnings</a></li>
+          <li><a href="file:///C:/Users/sethu/Desktop/hacker/calculator.html">calculator</a></li>
+          <li>
+            
+            <li style="float: right;" ><a href="file:///C:/Users/sethu/Desktop/hacker/map.html">map</a></li>
+
+          
+        </li>
+        <li>
+              
+          <li style="float: right;" ><a href="file:///C:/Users/sethu/Desktop/hacker/music.html">music</a></li>
+          
+        
+      </li>
+        </ul>   
+        
+     </div>
+
+<div style="background-color:black ;">
+	<h1 style="color: white;">Calculator</h1>
+
+	<fieldset>
+        <input style="padding: 20px; text-size-adjust:40px;" type="text" placeholder="0" value="" id="result">
+    </fieldset>
+   
+
+    <table >
+        <tr style="size:30px;">
+            <td><button onclick="myfuction(1)">1</button> </td> 
+            <td><button onclick="myfuction(2)">2 </button> </td> 
+            <td><button onclick="myfuction(3)">3</button></td>  
+            <td><button  onclick="equal()">= </button></td> 
+            <td><button  onclick="clearr()">clr</button></td>  
+        </tr>
+        <tr>
+            <td><button onclick="myfuction(4)">4</button> </td> 
+            <td><button onclick="myfuction(5)">5 </button> </td> 
+            <td><button onclick="myfuction(6)">6</button></td>  
+            <td><button onclick="myfuction('+')">+</button></td>  
+            <td><button  onclick="dlete()">del </button></td> 
+        </tr>
+        <tr>
+            <td><button onclick="myfuction(7)">7</button> </td> 
+            <td><button onclick="myfuction(8)">8 </button> </td> 
+            <td><button onclick="myfuction(9)">9</button></td> 
+            <td><button onclick="myfuction('-')">-</button></td>   
+        </tr>
+        <tr>
+            <td><button onclick="undo()">B</button> </td> 
+            <td><button onclick="myfuction(0)">0 </button> </td> 
+            <td><button onclick="myfuction('%')">%</button></td>  
+            <td><button onclick="myfuction('*')">*</button></td>  
+        </tr>
+    </table>
+
+<script>
+    var output = document.getElementById("result")
+    var num = output
+    function myfuction(a) {
+        output.value += a;
+    }
+  
+    function equal() {
+         num = output.value;
+        try{
+        output.value = eval(output.value);
+        }
+        catch(err) {
+           alert("Error");
+        }
+    }
+    function undo() {
+        output.value = num;
+    }
+    function clearr() {
+      output.value='';
+ }
+ function dlete() {
+  output.value=output.value.slice(0,-1);
+ }
+
+
+</script>
+</div>
+</body>
+</html>
